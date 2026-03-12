@@ -12,9 +12,9 @@ android {
         versionCode 10
         versionName "weikton-games-0.1"
         multiDexEnabled true
-        ndk {
-            abiFilters 'armeabi-v7a'
-        }
+//        ndk {
+//            abiFilters 'armeabi-v7a'
+//        }
     }
 }
 
