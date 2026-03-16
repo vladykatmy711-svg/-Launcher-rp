@@ -3,11 +3,11 @@ plugins {
 }
 
 android {
-    namespace 'com.pompeii.rp'          // замените на ваш package name
+    namespace 'com.pompeii.rp'          
     compileSdk 34
 
     defaultConfig {
-        applicationId "com.pompeii.rp"  // замените на ваш applicationId
+        applicationId "com.pompeii.rp"  
         minSdk 21
         targetSdk 34
         versionCode 1
