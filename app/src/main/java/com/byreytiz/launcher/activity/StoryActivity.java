@@ -10,7 +10,6 @@ import androidx.viewpager.widget.ViewPager;
 
 import com.byreytiz.game.R;
 import com.byreytiz.launcher.adapter.SliderStoriesAdapter;
-import com.denzcoskun.imageslideshow.models.SlideModel;
 import com.akexorcist.roundcornerprogressbar.RoundCornerProgressBar;
 
 import java.util.ArrayList;
@@ -20,7 +19,8 @@ public class StoryActivity extends AppCompatActivity {
     private RoundCornerProgressBar progressStory;
     private ViewPager viewPager;
     private SliderStoriesAdapter adapter;
-    private List<SlideModel> slideModels;
+    private List<String> imageUrls;
+    private List<String> titles;
     private Handler handler = new Handler();
     private int currentPosition = 0;
 
@@ -32,15 +32,21 @@ public class StoryActivity extends AppCompatActivity {
         progressStory = findViewById(R.id.progress_story);
         viewPager = findViewById(R.id.viewpager_story);
 
-        slideModels = new ArrayList<>();
-        slideModels.add(new SlideModel("https://example.com/image1.jpg", "Story 1"));
-        slideModels.add(new SlideModel("https://example.com/image2.jpg", "Story 2"));
-        slideModels.add(new SlideModel("https://example.com/image3.jpg", "Story 3"));
+        imageUrls = new ArrayList<>();
+        titles = new ArrayList<>();
+        
+        imageUrls.add("https://example.com/image1.jpg");
+        imageUrls.add("https://example.com/image2.jpg");
+        imageUrls.add("https://example.com/image3.jpg");
+        
+        titles.add("Story 1");
+        titles.add("Story 2");
+        titles.add("Story 3");
 
-        adapter = new SliderStoriesAdapter(this, slideModels);
+        adapter = new SliderStoriesAdapter(this, imageUrls, titles);
         viewPager.setAdapter(adapter);
 
-        progressStory.setMax(slideModels.size());
+        progressStory.setMax(imageUrls.size());
         progressStory.setProgress(1);
 
         viewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
@@ -64,7 +70,7 @@ public class StoryActivity extends AppCompatActivity {
         handler.postDelayed(new Runnable() {
             @Override
             public void run() {
-                if (currentPosition < slideModels.size() - 1) {
+                if (currentPosition < imageUrls.size() - 1) {
                     currentPosition++;
                     viewPager.setCurrentItem(currentPosition, true);
                 } else {
