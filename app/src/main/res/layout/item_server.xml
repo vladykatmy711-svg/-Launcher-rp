@@ -32,6 +32,6 @@
         android:layout_width="50dp"
         android:layout_height="50dp"
         app:cpb_progress="0"
-        app:cpb_progress_color="@color/white" />
+        app:cpb_progressbar_color="@color/white" />
 
-</LinearLayout>
+</LinearLayout></LinearLayout>
