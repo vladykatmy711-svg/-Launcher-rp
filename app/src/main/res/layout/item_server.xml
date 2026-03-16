@@ -34,4 +34,4 @@
         app:cpb_progress="0"
         app:cpb_progressbar_color="@color/white" />
 
-</LinearLayout></LinearLayout>
+</LinearLayout>
