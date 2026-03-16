@@ -19,6 +19,16 @@ jobs:
           distribution: 'zulu'
           java-version: '17'
 
+      # Принудительно обновляем Gradle wrapper
+      - name: Update Gradle wrapper
+        run: ./gradlew wrapper --gradle-version=8.6 --distribution-type=bin
+
+      # !!! НОВЫЙ ШАГ: очистка кэша Gradle
+      - name: Clean Gradle cache
+        run: |
+          rm -rf ~/.gradle/caches/
+          rm -rf ~/.gradle/wrapper/
+
       # Полное удаление старого SDK
       - name: Wipe Android SDK
         run: |
@@ -35,6 +45,25 @@ jobs:
           mkdir -p cmdline-tools
           mv latest cmdline-tools/
           echo "y" | cmdline-tools/latest/bin/sdkmanager --sdk_root=$ANDROID_HOME "platforms;android-34" "build-tools;34.0.0" --verbose
+          yes | cmdline-tools/latest/bin/sdkmanager --licenses
+
+      - name: Grant execute permission for gradlew
+        run: chmod +x gradlew
+
+      - name: Check Gradle version
+        run: ./gradlew --version
+
+      - name: Build with Gradle
+        run: ./gradlew assembleDebug --stacktrace
+
+      - name: Upload build logs on failure
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: build-logs
+          path: |
+            ~/.gradle/daemon/*/daemon-*.log
+            app/build/reports/          echo "y" | cmdline-tools/latest/bin/sdkmanager --sdk_root=$ANDROID_HOME "platforms;android-34" "build-tools;34.0.0" --verbose
           yes | cmdline-tools/latest/bin/sdkmanager --licenses
 
       - name: Grant execute permission for gradlew
