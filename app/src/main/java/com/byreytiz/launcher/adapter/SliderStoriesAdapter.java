@@ -7,50 +7,52 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
+import androidx.viewpager.widget.PagerAdapter;
+
 import com.byreytiz.game.R;
 import com.bumptech.glide.Glide;
-import com.denzcoskun.imageslideshow.models.SlideModel;
-import com.denzcoskun.imageslideshow.adapters.ImageSliderAdapter;
 
 import java.util.List;
 
-public class SliderStoriesAdapter extends ImageSliderAdapter {
+public class SliderStoriesAdapter extends PagerAdapter {
     private Context context;
-    private List<SlideModel> slideModels;
+    private List<String> imageUrls;
+    private List<String> titles;
 
-    public SliderStoriesAdapter(Context context, List<SlideModel> slideModels) {
+    public SliderStoriesAdapter(Context context, List<String> imageUrls, List<String> titles) {
         this.context = context;
-        this.slideModels = slideModels;
+        this.imageUrls = imageUrls;
+        this.titles = titles;
+    }
+
+    @NonNull
+    @Override
+    public Object instantiateItem(@NonNull ViewGroup container, int position) {
+        View view = LayoutInflater.from(context).inflate(R.layout.slider_item, container, false);
+        
+        ImageView imageView = view.findViewById(R.id.image_slider);
+        TextView textView = view.findViewById(R.id.text_slider);
+        
+        Glide.with(context).load(imageUrls.get(position)).into(imageView);
+        textView.setText(titles.get(position));
+        
+        container.addView(view);
+        return view;
+    }
+
+    @Override
+    public void destroyItem(@NonNull ViewGroup container, int position, @NonNull Object object) {
+        container.removeView((View) object);
     }
 
     @Override
     public int getCount() {
-        return slideModels.size();
+        return imageUrls.size();
     }
 
     @Override
-    public View getView(int position, View convertView, ViewGroup parent) {
-        View view = convertView;
-        if (view == null) {
-            view = LayoutInflater.from(context).inflate(R.layout.slider_item, parent, false);
-        }
-
-        ImageView imageView = view.findViewById(R.id.image_slider);
-        TextView textView = view.findViewById(R.id.text_slider);
-
-        SlideModel slideModel = slideModels.get(position);
-        
-        if (slideModel.getImageUrl() != null) {
-            Glide.with(context).load(slideModel.getImageUrl()).into(imageView);
-        }
-        
-        if (slideModel.getTitle() != null) {
-            textView.setText(slideModel.getTitle());
-            textView.setVisibility(View.VISIBLE);
-        } else {
-            textView.setVisibility(View.GONE);
-        }
-
-        return view;
+    public boolean isViewFromObject(@NonNull View view, @NonNull Object object) {
+        return view == object;
     }
-              }
+    }
