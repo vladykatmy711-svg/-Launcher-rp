@@ -44,10 +44,10 @@ dependencies {
     
     implementation 'com.github.denzcoskun:ImageSlideshow:0.1.2'
     implementation 'com.akexorcist:round-corner-progress-bar:2.2.0'
-    implementation 'com.dinuscxj:CircleProgressBar:3.1.0'
+    implementation 'com.mikhaellopez:circularprogressbar:3.1.0'
     implementation 'com.liulishuo.filedownloader:library:1.7.7'
-    implementation 'com.github.hzy3774:AndroidP7zip:1.7.0'
+    implementation 'org.apache.commons:commons-compress:1.26.0'
     implementation 'org.ini4j:ini4j:0.5.4'
     implementation 'com.github.skydoves:colorpickerview:2.2.4'
-    implementation 'com.mindorks.android:prdownloader:0.6.0'
+    implementation 'com.tonyodev.fetch2:fetch2:3.1.6'
 }
