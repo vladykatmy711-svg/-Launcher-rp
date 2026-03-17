@@ -4,179 +4,105 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="#001D31"
-    android:padding="24dp">
+    android:padding="20dp">
 
-    <!-- Горизонтальный контейнер для двух колонок -->
+    <!-- Верхняя строка: логотип + название слева, баланс справа -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:layout_marginBottom="40dp">
+
+        <!-- Логотип P и Pompeii RP (слева) -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="horizontal"
+            android:gravity="start">
+
+            <ImageView
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:src="@drawable/ic_logo_p"
+                android:layout_marginEnd="12dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Pompeii RP"
+                android:textColor="#F500BD"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                android:layout_gravity="center_vertical"/>
+        </LinearLayout>
+
+        <!-- Баланс P-coin (справа) -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="1240"
+                android:textColor="#008E67"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:layout_marginEnd="8dp"/>
+
+            <ImageView
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:src="@drawable/ic_pcoin"/>
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- Три кнопки по центру (как в образце: просто текст, без фона) -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
-        android:orientation="horizontal"
-        android:gravity="top">
+        android:orientation="vertical"
+        android:gravity="center">
 
-        <!-- Левая колонка: ник, X35OHYC, уровень, время -->
-        <LinearLayout
-            android:layout_width="0dp"
+        <TextView
+            android:id="@+id/btn_play"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:orientation="vertical"
-            android:gravity="top">
+            android:text="Играть"
+            android:textColor="#FFFFFF"
+            android:textSize="22sp"
+            android:layout_marginBottom="20dp"/>
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="llonaLin10"
-                android:textColor="#FFFFFF"
-                android:textSize="24sp"
-                android:textStyle="bold"
-                android:layout_marginBottom="4dp"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="X35OHYC"
-                android:textColor="#AAAAAA"
-                android:textSize="14sp"
-                android:layout_marginBottom="4dp"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="16"
-                android:textColor="#FFFFFF"
-                android:textSize="18sp"
-                android:layout_marginBottom="16dp"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="37:24:49"
-                android:textColor="#00A1D5"
-                android:textSize="14sp"/>
-        </LinearLayout>
-
-        <!-- Правая колонка: пять строк с иконками -->
-        <LinearLayout
-            android:layout_width="0dp"
+        <TextView
+            android:id="@+id/btn_settings"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:orientation="vertical"
-            android:gravity="top|end">
+            android:text="Настройки"
+            android:textColor="#FFFFFF"
+            android:textSize="22sp"
+            android:layout_marginBottom="20dp"/>
 
-            <!-- CEY4AC -->
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:gravity="center_vertical"
-                android:layout_marginBottom="16dp">
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="CEY4AC"
-                    android:textColor="#00A1D5"
-                    android:textSize="16sp"
-                    android:layout_marginEnd="12dp"/>
-                <ImageView
-                    android:layout_width="24dp"
-                    android:layout_height="24dp"
-                    android:src="@drawable/ic_placeholder"
-                    android:tint="#00A1D5"/>
-            </LinearLayout>
-
-            <!-- ONAAH -->
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:gravity="center_vertical"
-                android:layout_marginBottom="16dp">
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="ONAAH"
-                    android:textColor="#008E67"
-                    android:textSize="16sp"
-                    android:layout_marginEnd="12dp"/>
-                <ImageView
-                    android:layout_width="24dp"
-                    android:layout_height="24dp"
-                    android:src="@drawable/ic_placeholder"
-                    android:tint="#008E67"/>
-            </LinearLayout>
-
-            <!-- 21111 -->
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:gravity="center_vertical"
-                android:layout_marginBottom="16dp">
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="21111"
-                    android:textColor="#F500BD"
-                    android:textSize="16sp"
-                    android:layout_marginEnd="12dp"/>
-                <ImageView
-                    android:layout_width="24dp"
-                    android:layout_height="24dp"
-                    android:src="@drawable/ic_placeholder"
-                    android:tint="#F500BD"/>
-            </LinearLayout>
-
-            <!-- MATA3NH -->
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:gravity="center_vertical"
-                android:layout_marginBottom="16dp">
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="MATA3NH"
-                    android:textColor="#00A1D5"
-                    android:textSize="16sp"
-                    android:layout_marginEnd="12dp"/>
-                <ImageView
-                    android:layout_width="24dp"
-                    android:layout_height="24dp"
-                    android:src="@drawable/ic_placeholder"
-                    android:tint="#00A1D5"/>
-            </LinearLayout>
-
-            <!-- KABIHET -->
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:gravity="center_vertical"
-                android:layout_marginBottom="0dp">
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="KABIHET"
-                    android:textColor="#F500BD"
-                    android:textSize="16sp"
-                    android:layout_marginEnd="12dp"/>
-                <ImageView
-                    android:layout_width="24dp"
-                    android:layout_height="24dp"
-                    android:src="@drawable/ic_placeholder"
-                    android:tint="#F500BD"/>
-            </LinearLayout>
-        </LinearLayout>
+        <TextView
+            android:id="@+id/btn_exit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Выход"
+            android:textColor="#FFFFFF"
+            android:textSize="22sp"/>
     </LinearLayout>
 
-    <!-- Нижняя надпись RECOMMEND.RU по центру -->
+    <!-- Нижняя подпись PRP-studio -->
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="RECOMMEND.RU"
+        android:text="PRP-studio"
         android:textAlignment="center"
         android:textColor="#666666"
-        android:textSize="12sp"
-        android:layout_marginTop="20dp"/>
+        android:textSize="14sp"
+        android:layout_marginBottom="10dp"/>
 </LinearLayout>
