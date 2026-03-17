@@ -3,13 +3,50 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:gravity="center">
+    android:gravity="center"
+    android:background="#1a1a1a"
+    android:padding="20dp">
+
+    <ImageView
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:src="@mipmap/ic_launcher"
+        android:layout_marginBottom="20dp"/>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Pompeii RP"
-        android:textSize="24sp"
-        android:textStyle="bold" />
+        android:textColor="#9B59B6"
+        android:textSize="36sp"
+        android:textStyle="bold"
+        android:layout_marginBottom="8dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Version 1.0"
+        android:textColor="#888888"
+        android:textSize="16sp"
+        android:layout_marginBottom="32dp"/>
+
+    <Button
+        android:id="@+id/start_button"
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:text="Запустить игру"
+        android:backgroundTint="#8E44AD"
+        android:textColor="#FFFFFF"
+        android:textSize="16sp"/>
+
+    <Button
+        android:id="@+id/settings_button"
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:text="Настройки"
+        android:backgroundTint="#34495E"
+        android:textColor="#FFFFFF"
+        android:textSize="16sp"
+        android:layout_marginTop="10dp"/>
 
 </LinearLayout>

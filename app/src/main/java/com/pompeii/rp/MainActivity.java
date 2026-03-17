@@ -2,29 +2,28 @@ package com.pompeii.rp;
 
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
+import android.widget.Button;
 import android.widget.Toast;
-import com.byreytiz.game.R;
 
 public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        
-        // Подавляем ошибку OnBackInvokedCallback
-        if (android.os.Build.VERSION.SDK_INT >= 34) {
-            getOnBackInvokedDispatcher().registerOnBackInvokedCallback(
-                android.window.OnBackInvokedDispatcher.PRIORITY_DEFAULT,
-                () -> {}
+        setContentView(R.layout.activity_main);
+
+        Button startButton = findViewById(R.id.start_button);
+        Button settingsButton = findViewById(R.id.settings_button);
+
+        if (startButton != null) {
+            startButton.setOnClickListener(v -> 
+                Toast.makeText(this, "Pompeii RP запускается...", Toast.LENGTH_SHORT).show()
             );
         }
-        
-        try {
-            setContentView(R.layout.activity_main);
-            Toast.makeText(this, "Активити загружена", Toast.LENGTH_SHORT).show();
-        } catch (Exception e) {
-            String error = "Ошибка: " + e.getMessage();
-            Toast.makeText(this, error, Toast.LENGTH_LONG).show();
-            e.printStackTrace();
+
+        if (settingsButton != null) {
+            settingsButton.setOnClickListener(v -> 
+                Toast.makeText(this, "Настройки пока в разработке", Toast.LENGTH_SHORT).show()
+            );
         }
     }
 }
