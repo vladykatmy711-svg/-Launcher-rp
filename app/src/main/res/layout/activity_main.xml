@@ -33,7 +33,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Уровень 16"
-                android:textColor="#FF8GC9"
+                android:textColor="#F500BD"
                 android:textSize="14sp"/>
 
         </LinearLayout>
@@ -158,13 +158,13 @@
                     android:layout_width="64dp"
                     android:layout_height="64dp"
                     android:src="@drawable/ic_settings"
-                    android:tint="#FF8GC9"/>
+                    android:tint="#F500BD"/>
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="НАСТРОЙКИ"
-                    android:textColor="#FF8GC9"
+                    android:textColor="#F500BD"
                     android:textSize="16sp"
                     android:textStyle="bold"
                     android:layout_marginTop="8dp"/>
