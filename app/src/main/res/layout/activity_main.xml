@@ -4,118 +4,173 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="#001D31"
-    android:padding="16dp">
+    android:padding="24dp">
 
-    <!-- Верхняя строка -->
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:gravity="center_vertical"
-        android:layout_marginBottom="32dp">
-
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Pompeii RP"
-            android:textColor="#F500BD"
-            android:textSize="28sp"
-            android:textStyle="bold"/>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Уровень 16"
-            android:textColor="#00A1D5"
-            android:textSize="16sp"
-            android:layout_marginEnd="16dp"/>
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:gravity="center">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="1240"
-                android:textColor="#008E67"
-                android:textSize="18sp"
-                android:textStyle="bold"
-                android:layout_marginEnd="4dp"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="💎"
-                android:textColor="#008E67"
-                android:textSize="18sp"/>
-        </LinearLayout>
-    </LinearLayout>
-
-    <!-- Центральные три иконки по горизонтали -->
+    <!-- Горизонтальный контейнер для двух колонок -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
         android:orientation="horizontal"
-        android:gravity="center">
+        android:gravity="top">
 
-        <!-- Кейс -->
+        <!-- Левая колонка: ник, X35OHYC, уровень, время -->
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:orientation="vertical"
-            android:gravity="center">
+            android:gravity="top">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="КЕЙС"
-                android:textColor="#008E67"
-                android:textSize="20sp"
-                android:textStyle="bold"/>
+                android:text="llonaLin10"
+                android:textColor="#FFFFFF"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="4dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="X35OHYC"
+                android:textColor="#AAAAAA"
+                android:textSize="14sp"
+                android:layout_marginBottom="4dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="16"
+                android:textColor="#FFFFFF"
+                android:textSize="18sp"
+                android:layout_marginBottom="16dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="37:24:49"
+                android:textColor="#00A1D5"
+                android:textSize="14sp"/>
         </LinearLayout>
 
-        <!-- Профиль -->
+        <!-- Правая колонка: пять строк с иконками -->
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:orientation="vertical"
-            android:gravity="center">
+            android:gravity="top|end">
 
-            <TextView
+            <!-- CEY4AC -->
+            <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="ПРОФИЛЬ"
-                android:textColor="#F500BD"
-                android:textSize="20sp"
-                android:textStyle="bold"/>
-        </LinearLayout>
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_marginBottom="16dp">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="CEY4AC"
+                    android:textColor="#00A1D5"
+                    android:textSize="16sp"
+                    android:layout_marginEnd="12dp"/>
+                <ImageView
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:src="@drawable/ic_placeholder"
+                    android:tint="#00A1D5"/>
+            </LinearLayout>
 
-        <!-- Настройки -->
-        <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:orientation="vertical"
-            android:gravity="center">
-
-            <TextView
+            <!-- ONAAH -->
+            <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="НАСТРОЙКИ"
-                android:textColor="#F500BD"
-                android:textSize="20sp"
-                android:textStyle="bold"/>
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_marginBottom="16dp">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="ONAAH"
+                    android:textColor="#008E67"
+                    android:textSize="16sp"
+                    android:layout_marginEnd="12dp"/>
+                <ImageView
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:src="@drawable/ic_placeholder"
+                    android:tint="#008E67"/>
+            </LinearLayout>
+
+            <!-- 21111 -->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_marginBottom="16dp">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="21111"
+                    android:textColor="#F500BD"
+                    android:textSize="16sp"
+                    android:layout_marginEnd="12dp"/>
+                <ImageView
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:src="@drawable/ic_placeholder"
+                    android:tint="#F500BD"/>
+            </LinearLayout>
+
+            <!-- MATA3NH -->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_marginBottom="16dp">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="MATA3NH"
+                    android:textColor="#00A1D5"
+                    android:textSize="16sp"
+                    android:layout_marginEnd="12dp"/>
+                <ImageView
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:src="@drawable/ic_placeholder"
+                    android:tint="#00A1D5"/>
+            </LinearLayout>
+
+            <!-- KABIHET -->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_marginBottom="0dp">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="KABIHET"
+                    android:textColor="#F500BD"
+                    android:textSize="16sp"
+                    android:layout_marginEnd="12dp"/>
+                <ImageView
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:src="@drawable/ic_placeholder"
+                    android:tint="#F500BD"/>
+            </LinearLayout>
         </LinearLayout>
     </LinearLayout>
 
-    <!-- Нижняя строка (как в образце) -->
+    <!-- Нижняя надпись RECOMMEND.RU по центру -->
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -123,5 +178,5 @@
         android:textAlignment="center"
         android:textColor="#666666"
         android:textSize="12sp"
-        android:layout_marginBottom="16dp"/>
+        android:layout_marginTop="20dp"/>
 </LinearLayout>
