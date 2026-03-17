@@ -3,8 +3,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@drawable/gradient_bg"
-    android:padding="20dp">
+    android:background="#001D31"
+    android:padding="16dp">
 
     <!-- Верхняя строка -->
     <LinearLayout
@@ -12,7 +12,7 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:gravity="center_vertical"
-        android:layout_marginBottom="40dp">
+        android:layout_marginBottom="32dp">
 
         <TextView
             android:layout_width="0dp"
@@ -29,18 +29,13 @@
             android:text="Уровень 16"
             android:textColor="#00A1D5"
             android:textSize="16sp"
-            android:layout_marginEnd="20dp"/>
+            android:layout_marginEnd="16dp"/>
 
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:gravity="center">
-
-            <ImageView
-                android:layout_width="24dp"
-                android:layout_height="24dp"
-                android:src="@drawable/ic_pcoin"/>
 
             <TextView
                 android:layout_width="wrap_content"
@@ -49,13 +44,18 @@
                 android:textColor="#008E67"
                 android:textSize="18sp"
                 android:textStyle="bold"
-                android:layout_marginStart="4dp"/>
+                android:layout_marginEnd="4dp"/>
 
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="💎"
+                android:textColor="#008E67"
+                android:textSize="18sp"/>
         </LinearLayout>
-
     </LinearLayout>
 
-    <!-- Центральные три иконки (главные) -->
+    <!-- Центральные три иконки по горизонтали -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
@@ -71,23 +71,16 @@
             android:orientation="vertical"
             android:gravity="center">
 
-            <ImageView
-                android:layout_width="80dp"
-                android:layout_height="80dp"
-                android:src="@drawable/ic_case"/>
-
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="КЕЙС"
                 android:textColor="#008E67"
-                android:textSize="18sp"
-                android:textStyle="bold"
-                android:layout_marginTop="12dp"/>
-
+                android:textSize="20sp"
+                android:textStyle="bold"/>
         </LinearLayout>
 
-        <!-- Профиль (шлем) -->
+        <!-- Профиль -->
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -95,20 +88,13 @@
             android:orientation="vertical"
             android:gravity="center">
 
-            <ImageView
-                android:layout_width="80dp"
-                android:layout_height="80dp"
-                android:src="@drawable/ic_helmet_profile"/>
-
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="ПРОФИЛЬ"
                 android:textColor="#F500BD"
-                android:textSize="18sp"
-                android:textStyle="bold"
-                android:layout_marginTop="12dp"/>
-
+                android:textSize="20sp"
+                android:textStyle="bold"/>
         </LinearLayout>
 
         <!-- Настройки -->
@@ -119,108 +105,17 @@
             android:orientation="vertical"
             android:gravity="center">
 
-            <ImageView
-                android:layout_width="80dp"
-                android:layout_height="80dp"
-                android:src="@drawable/ic_settings"/>
-
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="НАСТРОЙКИ"
                 android:textColor="#F500BD"
-                android:textSize="18sp"
-                android:textStyle="bold"
-                android:layout_marginTop="12dp"/>
-
+                android:textSize="20sp"
+                android:textStyle="bold"/>
         </LinearLayout>
-
     </LinearLayout>
 
-    <!-- Нижняя панель с тремя маленькими иконками -->
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:gravity="center_vertical"
-        android:paddingTop="30dp"
-        android:paddingBottom="10dp">
-
-        <!-- Служба поддержки -->
-        <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:orientation="horizontal"
-            android:gravity="start"
-            android:paddingStart="10dp">
-
-            <ImageView
-                android:layout_width="32dp"
-                android:layout_height="32dp"
-                android:src="@drawable/ic_lamborghini_key"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="СЛУЖБА ПОДДЕРЖКИ"
-                android:textColor="#00A1D5"
-                android:textSize="12sp"
-                android:layout_marginStart="8dp"
-                android:layout_gravity="center_vertical"/>
-
-        </LinearLayout>
-
-        <!-- Магазин -->
-        <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:orientation="horizontal"
-            android:gravity="center">
-
-            <ImageView
-                android:layout_width="28dp"
-                android:layout_height="28dp"
-                android:src="@drawable/ic_shop"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="МАГАЗИН"
-                android:textColor="#008E67"
-                android:textSize="12sp"
-                android:layout_marginStart="6dp"/>
-
-        </LinearLayout>
-
-        <!-- События -->
-        <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:orientation="horizontal"
-            android:gravity="end"
-            android:paddingEnd="10dp">
-
-            <ImageView
-                android:layout_width="28dp"
-                android:layout_height="28dp"
-                android:src="@drawable/ic_event"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="СОБЫТИЯ"
-                android:textColor="#F500BD"
-                android:textSize="12sp"
-                android:layout_marginStart="6dp"/>
-
-        </LinearLayout>
-
-    </LinearLayout>
-
-    <!-- Надпись RECOMMEND.RU внизу по центру (как в образце) -->
+    <!-- Нижняя строка (как в образце) -->
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -228,7 +123,5 @@
         android:textAlignment="center"
         android:textColor="#666666"
         android:textSize="12sp"
-        android:layout_marginTop="5dp"
-        android:layout_marginBottom="5dp"/>
-
+        android:layout_marginBottom="16dp"/>
 </LinearLayout>
