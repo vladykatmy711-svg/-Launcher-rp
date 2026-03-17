@@ -1,16 +1,11 @@
 package com.byreytiz.game;
 
 import android.content.Context;
-import android.util.Log;
-import java.io.File;
-import java.io.FileWriter;
+import android.widget.Toast;
 import java.io.PrintWriter;
 import java.io.StringWriter;
-import java.text.SimpleDateFormat;
-import java.util.Date;
 
 public class CrashHandler implements Thread.UncaughtExceptionHandler {
-    private static final String TAG = "CrashHandler";
     private Context context;
 
     public CrashHandler(Context context) {
@@ -20,35 +15,27 @@ public class CrashHandler implements Thread.UncaughtExceptionHandler {
     @Override
     public void uncaughtException(Thread thread, Throwable ex) {
         try {
-            
-            File dir = new File(context.getCacheDir(), "crash_logs");
-            if (!dir.exists()) {
-                dir.mkdirs();
-            }
-
-            String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(new Date());
-            File crashFile = new File(dir, "crash_" + timeStamp + ".txt");
-
+            // Собираем стек ошибки
             StringWriter sw = new StringWriter();
             PrintWriter pw = new PrintWriter(sw);
             ex.printStackTrace(pw);
             String stackTrace = sw.toString();
 
-            FileWriter writer = new FileWriter(crashFile);
-            writer.write(stackTrace);
-            writer.close();
+            // Показываем ошибку на экране
+            String message = "❌ Приложение упало!\n\n";
+            message += "Ошибка: " + ex.getMessage() + "\n\n";
+            message += stackTrace.substring(0, Math.min(500, stackTrace.length())) + "...";
 
-            Log.e(TAG, "Crash saved to: " + crashFile.getAbsolutePath());
+            Toast.makeText(context, message, Toast.LENGTH_LONG).show();
 
-            
-            android.widget.Toast.makeText(context, 
-                "Crash log saved to: " + crashFile.getAbsolutePath(), 
-                android.widget.Toast.LENGTH_LONG).show();
+            // Ждём немного, чтобы пользователь успел прочитать
+            Thread.sleep(5000);
 
         } catch (Exception e) {
             e.printStackTrace();
         }
 
+        // Закрываем приложение
         android.os.Process.killProcess(android.os.Process.myPid());
         System.exit(1);
     }
