@@ -1,6 +1,6 @@
 package com.byreytiz.game;
 
-import android.os.Environment;
+import android.content.Context;
 import android.util.Log;
 import java.io.File;
 import java.io.FileWriter;
@@ -11,12 +11,17 @@ import java.util.Date;
 
 public class CrashHandler implements Thread.UncaughtExceptionHandler {
     private static final String TAG = "CrashHandler";
-    private static final String CRASH_DIR = Environment.getExternalStorageDirectory() + "/crash_logs/";
+    private Context context;
+
+    public CrashHandler(Context context) {
+        this.context = context;
+    }
 
     @Override
     public void uncaughtException(Thread thread, Throwable ex) {
         try {
-            File dir = new File(CRASH_DIR);
+            
+            File dir = new File(context.getCacheDir(), "crash_logs");
             if (!dir.exists()) {
                 dir.mkdirs();
             }
@@ -34,6 +39,12 @@ public class CrashHandler implements Thread.UncaughtExceptionHandler {
             writer.close();
 
             Log.e(TAG, "Crash saved to: " + crashFile.getAbsolutePath());
+
+            
+            android.widget.Toast.makeText(context, 
+                "Crash log saved to: " + crashFile.getAbsolutePath(), 
+                android.widget.Toast.LENGTH_LONG).show();
+
         } catch (Exception e) {
             e.printStackTrace();
         }
